@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "gsk1ERUsgmC95TdPB8g3IoagTOeR+hlkf4xbLuVq+lqy7bLhc7Wb0YWjjNN/qnJAwJYrTbcWWyuLm2aLhy7tRQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\willc\\dev\\source\\apps\\github-fetcher-api-dotnet\\github-fetcher-api-dotnet\\github-fetcher-api-dotnet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\willc\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\willc\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\willc\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\willc\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\willc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\willc\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
