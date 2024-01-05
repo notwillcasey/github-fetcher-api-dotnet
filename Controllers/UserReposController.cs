@@ -17,18 +17,23 @@ public class UserReposController : ControllerBase
         public async Task<IActionResult> GetUserRepos(string user)
         {
                 var apiUrl = $"https://api.github.com/users/{user}/repos";
-                HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
+                using (var request = new HttpRequestMessage(HttpMethod.Get, apiUrl))
+                {
+                        request.Headers.Accept.TryParseAdd("application/vnd.github+json");
+                        HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
+                        
+                        if (response.IsSuccessStatusCode)
+                        {
+                                string data = await response.Content.ReadAsStringAsync();
+                                return Ok(data);
+                        }
+                        else
+                        {
+                                return StatusCode((int)response.StatusCode);
+                        }
+                }
 
-                if (response.IsSuccessStatusCode)
-                {
-                        string data = await response.Content.ReadAsStringAsync();
-                        // Process the data or return it as-is
-                        return Ok(data);
-                }
-                else
-                {
-                        return StatusCode((int)response.StatusCode);
-                }
+
                 
         }
         
