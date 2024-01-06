@@ -28,8 +28,14 @@ public class UserReposController : ControllerBase
                 if (response.IsSuccessStatusCode)
                 {
                         string data = response.Content.ReadAsStringAsync().Result;
-                        GetUserRepos [] userRepos = JsonConvert.DeserializeObject<GetUserRepos[]>(data);
-                        return Ok(userRepos);
+                        List<GetUserRepos> userRepos = JsonConvert.DeserializeObject<List<GetUserRepos>>(data);
+                        List<Repos> repos = new List<Repos>();
+                        foreach (var el in userRepos)
+                        {
+                                Repos repo = new Repos(el);
+                                repos.Add(repo);
+                        }
+                        return Ok(repos);
                 }
                 else
                 {

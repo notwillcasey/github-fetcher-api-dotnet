@@ -84,7 +84,7 @@ public class GetUserRepos : Repos
     public bool Archived { get; set;}
     public bool Disabled { get; set;}
     public int OpenIssuesCount { get; set;}
-    public object License { get; set;}
+    public RepoLicense License { get; set;}
     public bool AllowForking { get; set;}
     public bool IsTemplate { get; set;}
     public bool WebCommitSignoffRequired { get; set;}
@@ -95,7 +95,7 @@ public class GetUserRepos : Repos
     public int Watchers { get; set;}
     public string DefaultBranch { get; set;}
 
-    public GetUserRepos(int id, string nodeId, string name, string fullName, bool @private, User owner, string htmlUrl, string description, bool fork, string url, string forksUrl, string keysUrl, string collaboratorsUrl, string teamsUrl, string hooksUrl, string issueEventsUrl, string eventsUrl, string assigneesUrl, string branchesUrl, string tagsUrl, string blobsUrl, string gitTagsUrl, string gitRefsUrl, string treesUrl, string statusesUrl, string languagesUrl, string stargazersUrl, string contributorsUrl, string subscribersUrl, string subscriptionUrl, string commitsUrl, string gitCommitsUrl, string commentsUrl, string issueCommentUrl, string contentsUrl, string compareUrl, string mergesUrl, string archiveUrl, string downloadsUrl, string issuesUrl, string pullsUrl, string milestonesUrl, string notificationsUrl, string labelsUrl, string releasesUrl, string deploymentsUrl, DateTime createdAt, DateTime updatedAt, DateTime pushedAt, string gitUrl, string sshUrl, string cloneUrl, string svnUrl, string homepage, int size, int stargazersCount, int watchersCount, string language, bool hasIssues, bool hasProjects, bool hasDownloads, bool hasWiki, bool hasPages, bool hasDiscussions, int forksCount, string mirrorUrl, bool archived, bool disabled, int openIssuesCount, string license, bool allowForking, bool isTemplate, bool webCommitSignoffRequired, string[] topics, string visibility, int forks, int openIssues, int watchers, string defaultBranch)
+    public GetUserRepos(int id, string nodeId, string name, string fullName, bool @private, User owner, string htmlUrl, string description, bool fork, string url, string forksUrl, string keysUrl, string collaboratorsUrl, string teamsUrl, string hooksUrl, string issueEventsUrl, string eventsUrl, string assigneesUrl, string branchesUrl, string tagsUrl, string blobsUrl, string gitTagsUrl, string gitRefsUrl, string treesUrl, string statusesUrl, string languagesUrl, string stargazersUrl, string contributorsUrl, string subscribersUrl, string subscriptionUrl, string commitsUrl, string gitCommitsUrl, string commentsUrl, string issueCommentUrl, string contentsUrl, string compareUrl, string mergesUrl, string archiveUrl, string downloadsUrl, string issuesUrl, string pullsUrl, string milestonesUrl, string notificationsUrl, string labelsUrl, string releasesUrl, string deploymentsUrl, DateTime createdAt, DateTime updatedAt, DateTime pushedAt, string gitUrl, string sshUrl, string cloneUrl, string svnUrl, string homepage, int size, int stargazersCount, int watchersCount, string language, bool hasIssues, bool hasProjects, bool hasDownloads, bool hasWiki, bool hasPages, bool hasDiscussions, int forksCount, string mirrorUrl, bool archived, bool disabled, int openIssuesCount, RepoLicense license, bool allowForking, bool isTemplate, bool webCommitSignoffRequired, string[] topics, string visibility, int forks, int openIssues, int watchers, string defaultBranch)
     {
         // allows us to enforce any parameters around each value
         Id = id;
@@ -223,5 +223,23 @@ public class User
         Type = type;
         SiteAdmin = siteAdmin;
     }
-    
+}
+
+public class RepoLicense
+{
+    public string Key { get; set;}
+    public string Name { get; set;}
+    public string Url { get; set;}
+    public string Spdx_id { get; set;}
+    public string Node_id { get; set;}
+    public string Html_url { get; set;}
+    public RepoLicense(string key, string name, string url, string spdx_id, string node_id, string html_url)
+    {
+        Key = key;
+        Name = name;
+        Url = url;
+        Spdx_id = spdx_id;
+        Node_id = node_id;
+        Html_url = html_url;
+    }
 }
