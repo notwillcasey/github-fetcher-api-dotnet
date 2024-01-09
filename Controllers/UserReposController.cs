@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 namespace github_fetcher_api_dotnet.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class UserReposController : ControllerBase
 {
         private readonly HttpClient _httpClient;

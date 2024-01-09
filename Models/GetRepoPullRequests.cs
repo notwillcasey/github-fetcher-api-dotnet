@@ -89,7 +89,7 @@ public class RequestedReviewers
     // Add other properties as needed
 }
 
-public class GetRepoPullRequest
+public class GetRepoPullRequests
 {
     public string Url { get; set; }
     public int Id { get; set; }
