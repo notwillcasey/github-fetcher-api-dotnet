@@ -22,7 +22,7 @@ public class UserReposController : ControllerBase
                 var apiUrl = $"https://api.github.com/users/{user}/repos";
                 _httpClient.DefaultRequestHeaders.Add("Accept", "application/vnd.github+json");
                 _httpClient.DefaultRequestHeaders.Add("User-Agent", "Request");
-                _httpClient.DefaultRequestHeaders.Add("token", "token");
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", "token");
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
                 
                 if (response.IsSuccessStatusCode)
