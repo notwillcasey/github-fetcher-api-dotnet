@@ -8,6 +8,15 @@ namespace github_fetcher_api_dotnet
             builder.Services.AddControllers();  
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                        .AllowAnyMethod()
+                        .AllowCredentials()
+                        .SetIsOriginAllowed((host) => true)
+                        .AllowAnyHeader());
+            });
 
             var app = builder.Build();
 
@@ -16,7 +25,8 @@ namespace github_fetcher_api_dotnet
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            
+
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
             app.MapControllers();
             app.Run();
