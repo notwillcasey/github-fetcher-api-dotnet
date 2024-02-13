@@ -14,15 +14,15 @@ public class UserReposController : ControllerBase
         public UserReposController()
         {
                 _httpClient = new HttpClient();
+                _httpClient.DefaultRequestHeaders.Add("Accept", "application/vnd.github+json");
+                _httpClient.DefaultRequestHeaders.Add("User-Agent", "Request");
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", "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");
         }
         
         [HttpGet("{user}")]
         public async Task<IActionResult> GetUserRepos(string user)
         {
                 var apiUrl = $"https://api.github.com/users/{user}/repos";
-                _httpClient.DefaultRequestHeaders.Add("Accept", "application/vnd.github+json");
-                _httpClient.DefaultRequestHeaders.Add("User-Agent", "Request");
-                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", "token");
                 HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
                 
                 if (response.IsSuccessStatusCode)

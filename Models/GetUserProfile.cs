@@ -35,26 +35,26 @@ public class GetUserProfile
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
     
-    public GetUserProfile(string login, int id, string nodeId, string avatarUrl, string gravatarId, string url, string htmlUrl, string followersUrl, string followingUrl, string gistsUrl, string starredUrl, string subscriptionsUrl, string organizationsUrl, string reposUrl, string eventsUrl, string receivedEventsUrl, string type, bool siteAdmin, string name, string company, string blog, string location, string email, bool? hireable, string bio, string twitterUsername, int publicRepos, int publicGists, int followers, int following, DateTime createdAt, DateTime updatedAt)
+    public GetUserProfile(string login, int id, string nodeId, string avatar_url, string gravatarId, string url, string html_url, string followers_url, string following_url, string gists_url, string starred_url, string subscriptions_url, string organizations_url, string repos_url, string events_url, string received_events_url, string type, bool site_admin, string name, string company, string blog, string location, string email, bool? hireable, string bio, string twitter_username, int public_repos, int public_gists, int followers, int following, DateTime created_at, DateTime updated_at)
     {
         Login = login;
         Id = id;
         NodeId = nodeId;
-        AvatarUrl = avatarUrl;
+        AvatarUrl = avatar_url;
         GravatarId = gravatarId;
         Url = url;
-        HtmlUrl = htmlUrl;
-        FollowersUrl = followersUrl;
-        FollowingUrl = followingUrl;
-        GistsUrl = gistsUrl;
-        StarredUrl = starredUrl;
-        SubscriptionsUrl = subscriptionsUrl;
-        OrganizationsUrl = organizationsUrl;
-        ReposUrl = reposUrl;
-        EventsUrl = eventsUrl;
-        ReceivedEventsUrl = receivedEventsUrl;
+        HtmlUrl = html_url;
+        FollowersUrl = followers_url;
+        FollowingUrl = following_url;
+        GistsUrl = gists_url;
+        StarredUrl = starred_url;
+        SubscriptionsUrl = subscriptions_url;
+        OrganizationsUrl = organizations_url;
+        ReposUrl = repos_url;
+        EventsUrl = events_url;
+        ReceivedEventsUrl = received_events_url;
         Type = type;
-        SiteAdmin = siteAdmin;
+        SiteAdmin = site_admin;
         Name = name;
         Company = company;
         Blog = blog;
@@ -62,13 +62,13 @@ public class GetUserProfile
         Email = email;
         Hireable = hireable;
         Bio = bio;
-        TwitterUsername = twitterUsername;
-        PublicRepos = publicRepos;
-        PublicGists = publicGists;
+        TwitterUsername = twitter_username;
+        PublicRepos = public_repos;
+        PublicGists = public_gists;
         Followers = followers;
         Following = following;
-        CreatedAt = createdAt;
-        UpdatedAt = updatedAt;
+        CreatedAt = created_at;
+        UpdatedAt = updated_at;
     }
 
 }
